@@ -10,6 +10,17 @@ const todos = [
 
 const app = express()
 
+/* 
+Express allows you to add functions that will be executed at each request : middleware
+For each request on the API, this header will be added
+Our server give authorization to the client use the address
+*/
+app.use((request, response, next) => {
+	response.header("Access-Control-Allow-Origin", "*")
+	response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+	next() //middleware is done so he can move on to the next one
+})
+
 app.get('/', (request, response) => {
 	response.send('OK')
 })
