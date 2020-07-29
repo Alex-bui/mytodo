@@ -5,6 +5,9 @@ const todo2 = require('../mocks/todos/2.json')
 
 const todos = [
 	todo1,
+	todo2,
+	todo1,
+	todo2,
 	todo2
 ]
 
